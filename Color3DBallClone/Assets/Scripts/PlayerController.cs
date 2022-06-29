@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,10 +9,10 @@ public class PlayerController : MonoBehaviour
     public GameObject vectorBack;
     public GameObject vectorForward;
     public UIManager uiManager;
-
+    
     private Touch _touch;
 
-    [Range(0.5f,2f)]
+    [Range(0.3f,2f)]
     public float speedModifier;
 
     public float forwardSpeed;
@@ -20,7 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject[] FractureItems;
 
-
+    private bool speedBallForward = false;
+    private bool firstTouchControl = false;
 
     private void Start()
     {
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        if(Variables.firstTouch == 1)
+        if(Variables.firstTouch == 1 && speedBallForward == false)
         {
             transform.position += new Vector3(0, 0, forwardSpeed * Time.deltaTime); 
             vectorBack.transform.position += new Vector3(0, 0, forwardSpeed * Time.deltaTime);
@@ -45,14 +47,35 @@ public class PlayerController : MonoBehaviour
 
             if(_touch.phase == TouchPhase.Began)
             {
-                Variables.firstTouch = 1;
+                if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+                {
+                    if (firstTouchControl == false)
+                    {
+                        Variables.firstTouch = 1;
+                        uiManager.FirstTouch();
+                        firstTouchControl = true;
+                    }
+                   
+                }    
             }
 
             else if(_touch.phase == TouchPhase.Moved)
             {
-                rb.velocity = new Vector3(_touch.deltaPosition.x * speedModifier, 
-                                           transform.position.y, 
-                                           _touch.deltaPosition.y * speedModifier);
+
+                if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) // parmaðýmýz canvas elemanlarý üzerinde deðil ise
+                {
+                    rb.velocity = new Vector3(_touch.deltaPosition.x * speedModifier,
+                           transform.position.y,
+                           _touch.deltaPosition.y * speedModifier);
+
+                    if (firstTouchControl == false)
+                    {
+                        Variables.firstTouch = 1;
+                        uiManager.FirstTouch();
+                        firstTouchControl = true;
+                    }
+
+                }
             }
             else if (_touch.phase == TouchPhase.Ended)
             {
@@ -78,9 +101,19 @@ public class PlayerController : MonoBehaviour
                 item.GetComponent<Rigidbody>().isKinematic = false;
                 
             }
-
+            StartCoroutine("TimeScaleControl");
+             
         }
     }
 
+    public IEnumerator TimeScaleControl()
+    {
+        speedBallForward = true;
+        yield return new WaitForSeconds(0.4f);
+        Time.timeScale = 0.4f;
+        yield return new WaitForSeconds(0.6f);
+        uiManager.RestartButtonActive();
+        rb.velocity = Vector3.zero;
+    }
    
 }
