@@ -19,6 +19,51 @@ public class UIManager : MonoBehaviour
     public GameObject vibrationOff;
 
 
+    private void Start()
+    {
+        if(PlayerPrefs.HasKey("Sound") == false)
+        {
+            PlayerPrefs.SetInt("Sound", 1);
+        }
+        if(PlayerPrefs.HasKey("Vibration") == false)
+        {
+            PlayerPrefs.SetInt("Vibration", 1);
+        }
+
+
+        if (PlayerPrefs.GetInt("Sound")==1)
+        {
+            soundOff.gameObject.SetActive(false);
+            soundOn.gameObject.SetActive(true);
+            AudioListener.volume = 1;
+        }
+        else if (PlayerPrefs.GetInt("Sound") == 2)
+        {
+            soundOn.gameObject.SetActive(false);
+            soundOff.gameObject.SetActive(true);
+            AudioListener.volume = 0;
+        }
+
+        if (PlayerPrefs.GetInt("Vibration") == 1)
+        {
+            vibrationOff.gameObject.SetActive(false);
+            vibrationOn.gameObject.SetActive(true);
+        }
+        else if (PlayerPrefs.GetInt("Vibration") == 2)
+        {
+            vibrationOn.gameObject.SetActive(false);
+            vibrationOff.gameObject.SetActive(true);
+        }
+    }
+
+
+
+    public void Privacy_Policy()
+    {
+        Application.OpenURL("https://github.com/smtzengin");
+    }
+
+
     //Button functions
     
 
@@ -41,23 +86,30 @@ public class UIManager : MonoBehaviour
     {
         soundOn.gameObject.SetActive(false);
         soundOff.gameObject.SetActive(true);
+        AudioListener.volume = 0;
+        PlayerPrefs.SetInt("Sound", 2);
+        
     }
 
     public void SoundOff()
     {
         soundOff.gameObject.SetActive(false);
-        soundOn.gameObject.SetActive(true);       
+        soundOn.gameObject.SetActive(true);
+        AudioListener.volume = 1;
+        PlayerPrefs.SetInt("Sound", 1);
     }
     public void VibrationOn()
     {
         vibrationOn.gameObject.SetActive(false);
         vibrationOff.gameObject.SetActive(true);
+        PlayerPrefs.SetInt("Vibration", 2);
     }
 
     public void VibrationOff()
     {
         vibrationOff.gameObject.SetActive(false);
-        vibrationOn.gameObject.SetActive(true);       
+        vibrationOn.gameObject.SetActive(true);
+        PlayerPrefs.SetInt("Vibration", 1);
     }
 
 
