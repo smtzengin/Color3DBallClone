@@ -45,6 +45,9 @@ public class UIManager : MonoBehaviour
     public GameObject coin;
     public GameObject rewardedButton;
     public GameObject noButton;
+    public GameObject achievedCoin;
+    public GameObject nextLevel;
+    public Text achievedCoinText;
 
     //Level
 
@@ -137,6 +140,13 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void NextScene()
+    {
+        Variables.firstTouch = 0;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void FinishScreen()
     {
         StartCoroutine("FinishLaunch");
@@ -156,6 +166,33 @@ public class UIManager : MonoBehaviour
         rewardedButton.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(0.1f);
         noButton.gameObject.SetActive(true);
+
+    }
+
+
+    public IEnumerator AfterRewardButton()
+    {
+        achievedCoin.SetActive(true);
+        achievedCoinText.gameObject.SetActive(true);
+        rewardedButton.gameObject.SetActive(false);
+        noButton.gameObject.SetActive(false);
+        yield return new WaitForSecondsRealtime(0.2f);
+        
+        for (int i = 0; i <= 400; i += 4)
+        {
+            achievedCoinText.text = "+" + i.ToString();
+            yield return new WaitForSeconds(0.0001f);
+        }
+        
+
+       
+        
+        
+
+        yield return new WaitForSecondsRealtime(1f);
+        nextLevel.SetActive(true);
+
+       
 
     }
 

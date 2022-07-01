@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public UIManager uiManager;
+    public AdManager adManager;
 
     private void Start()
     {
@@ -18,9 +19,13 @@ public class GameManager : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && gameObject.CompareTag("finishLine"))
         {
             CoinCalculator(100);
+
+            adManager.RequestInterstitial();
+            adManager.RequestRewardedAd();
             uiManager.coinTextUpdate();
             
             uiManager.FinishScreen();
+            PlayerPrefs.SetInt("LevelIndex", PlayerPrefs.GetInt("LevelIndex") + 1);
         }
     }
 
