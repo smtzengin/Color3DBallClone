@@ -11,6 +11,10 @@ public class UIManager : MonoBehaviour
     public Image whiteEffectImage;
     private int effectControl;
     public Animator anim;
+    public GameObject Player;
+    public GameObject finishLine;
+
+    private bool isRadialShine;
 
     //Buttons
 
@@ -29,8 +33,23 @@ public class UIManager : MonoBehaviour
     public GameObject toptopMoveTxt;
     public GameObject noAdsButton;
     public GameObject shopButton;
+    public Text coinText;
 
     public GameObject restartScreen;
+
+    //FinishScreen
+    public GameObject finishScreen;
+    public GameObject blackBackground;
+    public GameObject completeImage;
+    public GameObject radialShine;
+    public GameObject coin;
+    public GameObject rewardedButton;
+    public GameObject noButton;
+
+    //Level
+
+    public Image fillRateImage;
+
 
 
     private void Start()
@@ -68,6 +87,19 @@ public class UIManager : MonoBehaviour
             vibrationOn.gameObject.SetActive(false);
             vibrationOff.gameObject.SetActive(true);
         }
+
+        coinTextUpdate();
+    }
+
+
+    private void Update()
+    {
+        if (radialShine == true)
+        {
+            radialShine.GetComponent<RectTransform>().Rotate(new Vector3(0, 0, 40f * Time.deltaTime));
+        }
+
+        fillRateImage.fillAmount = ((Player.transform.position.z*100) / (finishLine.transform.position.z))/100;
     }
 
     public void FirstTouch()
@@ -87,6 +119,11 @@ public class UIManager : MonoBehaviour
         
     }
 
+    public void coinTextUpdate()
+    {
+        coinText.text = PlayerPrefs.GetInt("moneyy").ToString();
+    }
+
     public void RestartButtonActive()
     {
         restartScreen.SetActive(true);
@@ -97,6 +134,28 @@ public class UIManager : MonoBehaviour
         Variables.firstTouch = 0;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+
+    public void FinishScreen()
+    {
+        StartCoroutine("FinishLaunch");
+    }
+
+    public IEnumerator FinishLaunch()
+    {
+        Time.timeScale = 0.3f;
+        isRadialShine = true;
+        finishScreen.gameObject.SetActive(true);
+        blackBackground.gameObject.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.5f);
+        completeImage.gameObject.SetActive(true);
+        radialShine.gameObject.SetActive(true);
+        coin.gameObject.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.2f);
+        rewardedButton.gameObject.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.1f);
+        noButton.gameObject.SetActive(true);
 
     }
 
