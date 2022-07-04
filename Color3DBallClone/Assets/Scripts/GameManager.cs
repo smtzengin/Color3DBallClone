@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour
         {
             CoinCalculator(100);
 
-            adManager.RequestInterstitial();
+            if(PlayerPrefs.GetInt("NoAds") == 0)
+            {
+                adManager.RequestInterstitial();
+            }
             adManager.RequestRewardedAd();
             uiManager.coinTextUpdate();
             

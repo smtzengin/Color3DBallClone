@@ -12,7 +12,17 @@ public class Banner : MonoBehaviour
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(initStatus => { });
 
-        this.RequestBanner();
+        if (PlayerPrefs.HasKey("NoAds") == false)
+        {
+            PlayerPrefs.SetInt("NoAds", 0);
+        }
+
+        if (PlayerPrefs.GetInt("NoAds") == 0)
+        {
+            this.RequestBanner();
+        }
+
+        
     }
 
     private void RequestBanner()

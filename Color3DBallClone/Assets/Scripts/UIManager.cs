@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-   
 
+    public SoundManager sounds;
     public Image whiteEffectImage;
     private int effectControl;
     public Animator anim;
@@ -64,6 +64,11 @@ public class UIManager : MonoBehaviour
         if(PlayerPrefs.HasKey("Vibration") == false)
         {
             PlayerPrefs.SetInt("Vibration", 1);
+        }
+        
+         if(PlayerPrefs.GetInt("NoAds") == 1)
+        {
+            NoAdsRemove();
         }
 
 
@@ -122,6 +127,12 @@ public class UIManager : MonoBehaviour
         
     }
 
+    public void NoAdsRemove()
+    {
+        noAdsButton.SetActive(false);
+    }
+
+
     public void coinTextUpdate()
     {
         coinText.text = PlayerPrefs.GetInt("moneyy").ToString();
@@ -158,6 +169,7 @@ public class UIManager : MonoBehaviour
         isRadialShine = true;
         finishScreen.gameObject.SetActive(true);
         blackBackground.gameObject.SetActive(true);
+        sounds.CompletedSound();
         yield return new WaitForSecondsRealtime(0.5f);
         completeImage.gameObject.SetActive(true);
         radialShine.gameObject.SetActive(true);

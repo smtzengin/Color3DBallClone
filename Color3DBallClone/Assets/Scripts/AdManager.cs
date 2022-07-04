@@ -16,6 +16,7 @@ public class AdManager : MonoBehaviour
    
     public void RequestInterstitial()
     {
+
         #if UNITY_ANDROID
                 string adUnitId = "ca-app-pub-3940256099942544/1033173712";
         #elif UNITY_IPHONE
@@ -62,10 +63,14 @@ public class AdManager : MonoBehaviour
 
     public void ShowInterstitial()
     {
-        if (this.interstitial.IsLoaded())
+
+        if(PlayerPrefs.GetInt("NoAds") == 0)
         {
-            this.interstitial.Show();
-        }
+            if (this.interstitial.IsLoaded())
+            {
+                this.interstitial.Show();
+            }
+        }    
     }
 
     public void ShowRewardedAd()
@@ -110,6 +115,19 @@ public class AdManager : MonoBehaviour
             PlayerPrefs.SetInt("moneyy", 0);
         }
 
+    }
+
+
+
+    public void OnDestroy()
+    {
+        if(interstitial != null)
+        {
+            if(PlayerPrefs.GetInt("NoAds") == 0)
+            {
+                interstitial.Destroy();
+            }
+        }
     }
 }
 

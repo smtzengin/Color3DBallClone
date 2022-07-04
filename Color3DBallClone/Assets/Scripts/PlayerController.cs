@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public GameObject vectorBack;
     public GameObject vectorForward;
     public UIManager uiManager;
+    public SoundManager sounds;
     
     private Touch _touch;
 
@@ -93,6 +94,15 @@ public class PlayerController : MonoBehaviour
             uiManager.StartCoroutine("WhiteEffect");   
 
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            sounds.BlowUpSound();
+            if(PlayerPrefs.GetInt("Vibration") == 1)
+            {
+                Vibration.Vibrate(50);
+            }
+            else if (PlayerPrefs.GetInt("Vibration") == 2)
+            {
+                Debug.Log("olmaz...");
+            }
 
             
             foreach (GameObject item in FractureItems)
