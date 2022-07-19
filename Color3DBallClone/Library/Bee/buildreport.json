@@ -1,0 +1,20 @@
+{
+"instructions_readme": "1) Open Chrome, 2) go to chrome://tracing, 3) click Load, 4) navigate to this file.",
+
+"traceEvents":[
+{ "pid": "Unity", "ph":"M", "name": "process_name", "args": {"name": "Unity"} },
+{ "pid": "Unity", "ph":"M", "name": "process_sort_index", "args": {"sort_index": -100} },
+{ "pid": "Unity", "tid": 1, "ph":"M", "name": "thread_name", "args": {"name": ""} },
+{ "pid": "Unity", "tid": 1,"ts": 6284497000.5,"dur": 3508397.5, "ph":"X", "name": "Build player"},
+{ "pid": "Unity", "tid": 1,"ts": 6284507817.1,"dur": 137871.6, "ph":"X", "name": "Preprocess Player"},
+{ "pid": "Unity", "tid": 1,"ts": 6284688752.1,"dur": 3266512.9, "ph":"X", "name": "Prepare For Build"},
+{}
+
+],
+"meta_datetime": "07/19/2022 12:42:32",
+"meta_command_line": "\"C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.2f1\\Editor\\Unity.exe\" -projectpath C:\\Users\\smtzn\\Documents\\GitHub\\Color3DBallClone\\Color3DBallClone -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-smtzn -hubSessionId 623b4c50-0743-11ed-aa5b-a51f872192a3 -accessToken XmdaKxKsRTZTj0jvsDIYOEj6-TsklOZmgJEWwPT-5yY011f",
+"meta_command_line_args": "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.2f1\\Editor\\Unity.exe -projectpath C:\\Users\\smtzn\\Documents\\GitHub\\Color3DBallClone\\Color3DBallClone -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-smtzn -hubSessionId 623b4c50-0743-11ed-aa5b-a51f872192a3 -accessToken XmdaKxKsRTZTj0jvsDIYOEj6-TsklOZmgJEWwPT-5yY011f",
+"meta_user_name": "smtzn",
+"meta_os_version": "Microsoft Windows NT 10.0.19044.0",
+"meta_cpu_count": "12"
+}
