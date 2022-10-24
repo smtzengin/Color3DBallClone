@@ -10,12 +10,14 @@ ScriptsOnlyBuild:
     - LevelManager
     - PlayerController
     - Slider
-    - SoundManager
     - UIManager
     GoogleMobileAds.Common.dll:
     - GoogleMobileAds.Common.MobileAdsEventExecutor
     GoogleMobileAds.Editor.dll:
     - GoogleMobileAds.Editor.GoogleMobileAdsSettings
+    Unity.DeviceSimulator.Editor.dll:
+    - UnityEditor.DeviceSimulation.DeviceInfoAsset
+    - UnityEditor.DeviceSimulation.SimulatorWindow
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -26,6 +28,12 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -41,173 +49,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Mask
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
-  serializedClasses:
-    Unity.TextMeshPro:
-    - TMPro.FaceInfo_Legacy
-    - TMPro.FontAssetCreationSettings
-    - TMPro.KerningTable
-    - TMPro.TMP_Character
-    - TMPro.TMP_FontFeatureTable
-    - TMPro.TMP_FontWeightPair
-    - TMPro.TMP_GlyphAdjustmentRecord
-    - TMPro.TMP_GlyphPairAdjustmentRecord
-    - TMPro.TMP_GlyphValueRecord
-    - TMPro.TMP_Sprite
-    - TMPro.TMP_SpriteCharacter
-    - TMPro.TMP_SpriteGlyph
-    - TMPro.TMP_Style
-    - TMPro.VertexGradient
-    UnityEngine.CoreModule:
-    - UnityEngine.Events.ArgumentCache
-    - UnityEngine.Events.PersistentCallGroup
-    - UnityEngine.Events.PersistentListenerMode
-    - UnityEngine.RectOffset
-    UnityEngine.TextCoreFontEngineModule:
-    - UnityEngine.TextCore.FaceInfo
-    - UnityEngine.TextCore.Glyph
-    - UnityEngine.TextCore.GlyphMetrics
-    - UnityEngine.TextCore.GlyphRect
-    UnityEngine.UI:
-    - UnityEngine.UI.AnimationTriggers
-    - UnityEngine.UI.Button/ButtonClickedEvent
-    - UnityEngine.UI.ColorBlock
-    - UnityEngine.UI.FontData
-    - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
-    - UnityEngine.UI.Navigation
-    - UnityEngine.UI.SpriteState
-  methodsToPreserve:
-  - assembly: Assembly-CSharp
-    fullTypeName: AdManager
-    methodName: ShowRewardedAd
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: SettingsOpen
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: NoAdsRemove
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: SettingsClose
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: Privacy_Policy
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: NextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: RestartScene
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: SoundOff
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: NextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: AdManager
-    methodName: ShowInterstitial
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: VibrationOn
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: VibrationOff
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: SoundOn
-  - assembly: Assembly-CSharp
-    fullTypeName: AdManager
-    methodName: ShowRewardedAd
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: SettingsOpen
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: NoAdsRemove
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: SettingsClose
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: Privacy_Policy
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: NextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: RestartScene
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: SoundOff
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: NextScene
-  - assembly: Assembly-CSharp
-    fullTypeName: AdManager
-    methodName: ShowInterstitial
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: VibrationOn
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: VibrationOff
-  - assembly: Assembly-CSharp
-    fullTypeName: SoundManager
-    methodName: ButtonSound
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: UIManager
-    methodName: SoundOn
   sceneClasses:
     Assets/Scenes/Level_1.unity:
     - Class: 1
@@ -236,64 +77,56 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
-      Script: {instanceID: 0}
-    - Class: 96
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1564}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1730}
+      Script: {instanceID: 1656}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 1918}
+      Script: {instanceID: 1844}
     - Class: 114
-      Script: {instanceID: 1988}
+      Script: {instanceID: 1906}
     - Class: 114
-      Script: {instanceID: 2308}
+      Script: {instanceID: 2218}
     - Class: 114
-      Script: {instanceID: 2472}
+      Script: {instanceID: 2366}
     - Class: 114
-      Script: {instanceID: 2476}
+      Script: {instanceID: 2370}
     - Class: 114
-      Script: {instanceID: 2584}
+      Script: {instanceID: 2466}
     - Class: 114
-      Script: {instanceID: 2656}
+      Script: {instanceID: 2534}
     - Class: 114
-      Script: {instanceID: 2778}
+      Script: {instanceID: 2662}
     - Class: 114
-      Script: {instanceID: 2826}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2972}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 3196}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3156}
     - Class: 114
-      Script: {instanceID: 3594}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 3656}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 3748}
+      Script: {instanceID: 3592}
     - Class: 114
-      Script: {instanceID: 3916}
+      Script: {instanceID: 3758}
     - Class: 114
-      Script: {instanceID: 4124}
+      Script: {instanceID: 3956}
     - Class: 114
-      Script: {instanceID: 4376}
-    - Class: 114
-      Script: {instanceID: 4690}
+      Script: {instanceID: 4208}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -347,64 +180,56 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
-      Script: {instanceID: 0}
-    - Class: 96
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1564}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1730}
+      Script: {instanceID: 1656}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 1918}
+      Script: {instanceID: 1844}
     - Class: 114
-      Script: {instanceID: 1988}
+      Script: {instanceID: 1906}
     - Class: 114
-      Script: {instanceID: 2308}
+      Script: {instanceID: 2218}
     - Class: 114
-      Script: {instanceID: 2472}
+      Script: {instanceID: 2366}
     - Class: 114
-      Script: {instanceID: 2476}
+      Script: {instanceID: 2370}
     - Class: 114
-      Script: {instanceID: 2584}
+      Script: {instanceID: 2466}
     - Class: 114
-      Script: {instanceID: 2656}
+      Script: {instanceID: 2534}
     - Class: 114
-      Script: {instanceID: 2778}
+      Script: {instanceID: 2662}
     - Class: 114
-      Script: {instanceID: 2826}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2972}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 3196}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3156}
     - Class: 114
-      Script: {instanceID: 3594}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 3656}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 3748}
+      Script: {instanceID: 3592}
     - Class: 114
-      Script: {instanceID: 3916}
+      Script: {instanceID: 3758}
     - Class: 114
-      Script: {instanceID: 4124}
+      Script: {instanceID: 3956}
     - Class: 114
-      Script: {instanceID: 4376}
-    - Class: 114
-      Script: {instanceID: 4690}
+      Script: {instanceID: 4208}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -455,33 +280,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1564}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1718}
+      Script: {instanceID: 1642}
     - Class: 114
-      Script: {instanceID: 1988}
+      Script: {instanceID: 1906}
     - Class: 114
-      Script: {instanceID: 2304}
+      Script: {instanceID: 2204}
     - Class: 114
-      Script: {instanceID: 2656}
+      Script: {instanceID: 2534}
     - Class: 114
-      Script: {instanceID: 2778}
+      Script: {instanceID: 2662}
     - Class: 114
-      Script: {instanceID: 2826}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2972}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 3058}
+      Script: {instanceID: 2930}
     - Class: 114
-      Script: {instanceID: 3196}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3466}
+      Script: {instanceID: 3316}
     - Class: 114
-      Script: {instanceID: 4252}
+      Script: {instanceID: 4078}
     - Class: 114
-      Script: {instanceID: 4368}
+      Script: {instanceID: 4200}
     - Class: 114
-      Script: {instanceID: 4654}
+      Script: {instanceID: 4484}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -505,12 +330,6 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UIElements
-    className: PanelRaycaster
-  - hash:
-      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -523,7 +342,7 @@ ScriptsOnlyBuild:
     className: GoogleMobileAdsSettings
   - hash:
       serializedVersion: 2
-      Hash: bcecf840106f38e2678eddb8e7294c58
+      Hash: 2cee94e344182961415b6c6fb7b2d8b0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -589,7 +408,7 @@ ScriptsOnlyBuild:
     className: SkewTextExample
   - hash:
       serializedVersion: 2
-      Hash: e7f4dad5deeb4e29eb6a330b422f9ca9
+      Hash: 97b28294ecc224c6c2d9a4eeccfb52e5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
@@ -623,12 +442,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro
     className: TMP_DigitValidator
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UIElements
-    className: PanelEventHandler
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -727,7 +540,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: c822eec45bd7c5f6d7c8a2d82a6feb07
+      Hash: a74405a4829a834d107a0c6e072719ed
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
@@ -763,7 +576,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: 8fbc134fd506d97c845cf2b715231396
+      Hash: a306e12d896ddcca949923c805691027
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: InputField
@@ -805,7 +618,7 @@ ScriptsOnlyBuild:
     className: Variables
   - hash:
       serializedVersion: 2
-      Hash: e09e8bebc0fcd32bb8af1287a6b44816
+      Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: StandaloneInputModule
@@ -841,6 +654,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 0fd6822f6177297bd0eb4d83cc7a9030
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: ToggleGroup
+  - hash:
+      serializedVersion: 2
       Hash: 69415240821be7986b27e72bf9609a30
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -851,12 +670,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: Benchmark04
-  - hash:
-      serializedVersion: 2
-      Hash: 0fd6822f6177297bd0eb4d83cc7a9030
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: ToggleGroup
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -943,7 +756,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 27ec3360f0c0a6803ba71cc3106480b8
+      Hash: da4cc51a02ce84afe2cecd27cfe6997a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshPro
@@ -1147,12 +960,6 @@ ScriptsOnlyBuild:
     className: VertexColorCycler
   - hash:
       serializedVersion: 2
-      Hash: 3035abc5c6935b25253acc7652d356bc
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SoundManager
-  - hash:
-      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1213,7 +1020,7 @@ ScriptsOnlyBuild:
     className: Benchmark01
   - hash:
       serializedVersion: 2
-      Hash: ec4c1d7d9fe98434976788ebc4ee261e
+      Hash: abf1930d8126d0b2e00e9449129a0190
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
@@ -1228,4 +1035,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Loading.unity
   - Assets/Scenes/Level_1.unity
   - Assets/Scenes/Level_2.unity
-  playerPath: C:/Users/smtzn/Desktop/color3dball.apk
+  playerPath: "C:/Users/nostr/OneDrive/Masa\xFCst\xFC/alnolur.apk"
